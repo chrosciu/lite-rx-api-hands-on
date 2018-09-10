@@ -29,13 +29,34 @@ public class Part12ProgrammaticFlux {
     // *******
     // You can use nStars helper function
     Flux<String> starsFluxWithGenerate(int from, int to) {
-        return null;
+        return Flux.generate(() -> from, (n, sink) -> {
+            sink.next(nStars(n));
+            if (n == to) {
+                sink.complete();
+            }
+            return n + 1;
+        });
     }
 
 //========================================================================================
 
     //TODO Return flux containing users emitted by given event source (using Flux#create)
     Flux<User> userFluxFromEventSource(EventSource<User> eventSource) {
-        return null;
+        return Flux.push(sink -> {
+            eventSource.registerListener(new EventListener<User>() {
+                @Override
+                public void next(User user) {
+                    sink.next(user);
+                }
+                @Override
+                public void error(Exception e) {
+                    sink.error(e);
+                }
+                @Override
+                public void end() {
+                    sink.complete();
+                }
+            });
+        });
     }
 }
