@@ -4,27 +4,29 @@ import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import static io.pivotal.literx.domain.User.SKYLER;
+
 public class Part14Collecting {
 
 //========================================================================================
 
     // TODO Concat all strings included in Flux
     Mono<String> concatStrings(Flux<String> flux) {
-        return null;
+        return flux.reduce((s, s2) -> s + s2);
     }
 
 //========================================================================================
 
     // TODO Singal true if any of user in flux is SKYLER
     Mono<Boolean> includesSkyler(Flux<User> flux) {
-        return null;
+        return flux.any(SKYLER::equals);
     }
 
 //========================================================================================
 
     // TODO Singal true if none of user in flux is SKYLER
     Mono<Boolean> doesNotIncludeSkyler(Flux<User> flux) {
-        return null;
+        return flux.all(u -> !SKYLER.equals(u));
     }
 
 }
