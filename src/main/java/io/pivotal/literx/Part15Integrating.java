@@ -29,7 +29,7 @@ public class Part15Integrating {
     }
 
     private Flux<Integer> eventSource2Flux(EventSource<Integer> eventSource) {
-        return Flux.push(sink -> {
+        return Flux.create(sink -> {
             eventSource.registerListener(new EventListener<Integer>() {
                 @Override
                 public void next(Integer integer) {

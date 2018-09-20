@@ -42,7 +42,7 @@ public class Part12ProgrammaticFlux {
 
     //TODO Return flux containing users emitted by given event source (using Flux#create)
     Flux<User> userFluxFromEventSource(EventSource<User> eventSource) {
-        return Flux.push(sink -> {
+        return Flux.create(sink -> {
             eventSource.registerListener(new EventListener<User>() {
                 @Override
                 public void next(User user) {
