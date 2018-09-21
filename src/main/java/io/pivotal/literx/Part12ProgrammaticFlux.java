@@ -1,6 +1,7 @@
 package io.pivotal.literx;
 
 import io.pivotal.literx.domain.User;
+import io.pivotal.literx.event.EventListener;
 import io.pivotal.literx.event.EventSource;
 import reactor.core.publisher.Flux;
 
