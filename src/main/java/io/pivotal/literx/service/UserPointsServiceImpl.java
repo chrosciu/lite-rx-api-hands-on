@@ -1,6 +1,5 @@
 package io.pivotal.literx.service;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import io.pivotal.literx.domain.User;
 import io.pivotal.literx.event.EventSource;
 import reactor.core.publisher.Flux;
