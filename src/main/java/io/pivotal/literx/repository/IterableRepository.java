@@ -2,6 +2,6 @@ package io.pivotal.literx.repository;
 
 import io.reactivex.Observable;
 
-public interface ObservableRepository<T> {
-    Observable<T> findAll();
+public interface IterableRepository<T> {
+    Iterable<T> findAll();
 }

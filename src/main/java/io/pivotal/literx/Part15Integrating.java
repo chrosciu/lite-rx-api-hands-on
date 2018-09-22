@@ -3,10 +3,8 @@ package io.pivotal.literx;
 import io.pivotal.literx.domain.User;
 import io.pivotal.literx.event.EventListener;
 import io.pivotal.literx.event.EventSource;
-import io.pivotal.literx.repository.ObservableRepository;
+import io.pivotal.literx.repository.IterableRepository;
 import io.pivotal.literx.service.UserPointsService;
-import io.reactivex.BackpressureStrategy;
-import io.reactivex.Observable;
 import org.reactivestreams.Publisher;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -17,9 +15,9 @@ public class Part15Integrating {
 
 //========================================================================================
     // TODO Sum all points for all users (beware of traps !). Discard users whose sum of points is less than or equal to 5
-    public Mono<Integer> sumUsersPoints(ObservableRepository<User> userObservableRepository, UserPointsService userPointsService) {
-        Observable<User> users = userObservableRepository.findAll();
-        Flux<User> userFlux = Flux.from(users.toFlowable(BackpressureStrategy.MISSING));
+    public Mono<Integer> sumUsersPoints(IterableRepository<User> iterableUserRepository, UserPointsService userPointsService) {
+        Iterable<User> users = iterableUserRepository.findAll();
+        Flux<User> userFlux = Flux.fromIterable(users);
         Flux<Integer> points = userFlux.flatMap((Function<User, Publisher<Integer>>) user ->
                 userPointsService.getStarPoints(user).onErrorReturn("").map(String::length)
                         .concatWith(eventSource2Flux(userPointsService.getNumericPointsEventSource(user)).onErrorReturn(0))
