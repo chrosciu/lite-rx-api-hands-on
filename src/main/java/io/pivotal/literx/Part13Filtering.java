@@ -10,7 +10,7 @@ public class Part13Filtering {
 
 //========================================================================================
 
-    // TODO Remove users whose names are equal to White
+    // TODO Remove users whose last names are equal to White
     Flux<User> removeUsersWithWhiteName(Flux<User> flux) {
         return null;
     }

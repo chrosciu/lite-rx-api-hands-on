@@ -15,14 +15,14 @@ public class Part14Collecting {
 
 //========================================================================================
 
-    // TODO Singal true if any of user in flux is SKYLER
+    // TODO Signal true if any of user in flux is SKYLER
     Mono<Boolean> includesSkyler(Flux<User> flux) {
         return null;
     }
 
 //========================================================================================
 
-    // TODO Singal true if none of user in flux is SKYLER
+    // TODO Signal true if none of user in flux is SKYLER
     Mono<Boolean> doesNotIncludeSkyler(Flux<User> flux) {
         return null;
     }
