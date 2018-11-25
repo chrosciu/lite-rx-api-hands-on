@@ -14,7 +14,7 @@ import java.util.function.Function;
 public class Part15Integrating {
 
 //========================================================================================
-    // TODO Sum all points for all users (beware of traps !). Discard users whose sum of points is less than or equal to 5
+    // TODO Sum all points for all users (beware of traps !). Discard points which value is less than or equal to 5
     public Mono<Integer> sumUsersPoints(IterableRepository<User> iterableUserRepository, UserPointsService userPointsService) {
         Iterable<User> users = iterableUserRepository.findAll();
         Flux<User> userFlux = Flux.fromIterable(users);
