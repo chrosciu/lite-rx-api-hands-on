@@ -9,6 +9,13 @@ import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 import reactor.test.publisher.PublisherProbe;
 
+import java.time.Duration;
+import java.util.concurrent.TimeoutException;
+
+import static io.pivotal.literx.domain.User.JESSE;
+import static io.pivotal.literx.domain.User.SKYLER;
+import static io.pivotal.literx.domain.User.WALTER;
+
 /**
  * Learn how to use various other operators.
  *
@@ -111,4 +118,24 @@ public class Part08OtherOperationsTest {
 				.verifyComplete();
 	}
 
+//========================================================================================
+
+	@Test
+	public void fluxWithTwoSecondsTimeoutTest() {
+		Flux<User> userFlux = Flux.just(SKYLER, JESSE, WALTER).delayUntil(this::getUserDelayFlux);
+		Flux<User> resultFlux = workshop.fluxWithTwoSecondsTimeout(userFlux);
+		StepVerifier.create(resultFlux)
+				.expectNext(SKYLER, JESSE)
+				.verifyError(TimeoutException.class);
+	}
+
+	private Flux<Integer> getUserDelayFlux(User user) {
+		Duration delay = Duration.ZERO;
+		if (JESSE == user) {
+			delay = Duration.ofSeconds(1);
+		} else if (WALTER == user) {
+			delay = Duration.ofSeconds(3);
+		}
+		return Flux.just(0).delayElements(delay);
+	}
 }

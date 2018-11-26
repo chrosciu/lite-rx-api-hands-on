@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.function.Function;
 
-public class Part15Integrating {
+public class Part17Integrating {
 
 //========================================================================================
     // TODO Sum all points for all users (beware of traps !). Discard points which value is less than or equal to 5

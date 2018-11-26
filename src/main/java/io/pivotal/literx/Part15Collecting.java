@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 
 import static io.pivotal.literx.domain.User.SKYLER;
 
-public class Part14Collecting {
+public class Part15Collecting {
 
 //========================================================================================
 

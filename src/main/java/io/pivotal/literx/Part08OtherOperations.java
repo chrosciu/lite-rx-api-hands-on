@@ -3,10 +3,9 @@ package io.pivotal.literx;
 import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.util.function.Tuple2;
-import reactor.util.function.Tuple3;
 
-import java.util.function.Function;
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Learn how to use various other operators.
@@ -55,6 +54,13 @@ public class Part08OtherOperations {
 	// TODO Return the same mono passed as input parameter, expect that it will emit User.SKYLER when empty
 	Mono<User> emptyToSkyler(Mono<User> mono) {
 		return mono.defaultIfEmpty(User.SKYLER);
+	}
+
+//========================================================================================
+
+    // TODO Return flux which reports error if no user is signalled for two seconds
+	Flux<User> fluxWithTwoSecondsTimeout(Flux<User> flux) {
+		return flux.timeout(Duration.of(2, ChronoUnit.SECONDS));
 	}
 
 }
