@@ -53,4 +53,11 @@ public class Part08OtherOperations {
 		return null;
 	}
 
+//========================================================================================
+
+    // TODO Return flux which reports error if no user is signalled for two seconds
+	Flux<User> fluxWithTwoSecondsTimeout(Flux<User> flux) {
+		return null;
+	}
+
 }
