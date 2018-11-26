@@ -13,9 +13,9 @@ import static io.pivotal.literx.domain.User.SAUL;
 import static io.pivotal.literx.domain.User.SKYLER;
 import static io.pivotal.literx.domain.User.WALTER;
 
-public class Part16SplittingTest {
+public class Part16GroupingTest {
 
-    private Part16Splitting workshop = new Part16Splitting();
+    private Part16Grouping workshop = new Part16Grouping();
 
 //========================================================================================
 

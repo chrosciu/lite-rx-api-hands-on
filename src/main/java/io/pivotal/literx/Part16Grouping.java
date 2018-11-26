@@ -5,7 +5,10 @@ import reactor.core.publisher.Flux;
 
 import java.util.List;
 
-public class Part16Splitting {
+/**
+ * Learn how to group Flux elements
+ */
+public class Part16Grouping {
 
 //========================================================================================
 
