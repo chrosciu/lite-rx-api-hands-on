@@ -16,12 +16,12 @@ public class Part17IntegratingTest {
 
 //========================================================================================
 
-  @Test
-  public void sumUsersPoints() {
-      final int expectedSum = 108;
-      StepVerifier.create(workshop.sumUsersPoints(iterableUserRepository, userPointsService))
-              .expectNext(expectedSum)
-              .verifyComplete();
-  }
+    @Test
+    public void sumUsersPoints() {
+        final int expectedSum = 108;
+        StepVerifier.create(workshop.sumUsersPoints(iterableUserRepository, userPointsService))
+                .expectNext(expectedSum)
+                .verifyComplete();
+    }
 
 }
