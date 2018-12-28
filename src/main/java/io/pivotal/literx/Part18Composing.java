@@ -3,6 +3,7 @@ package io.pivotal.literx;
 import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
 
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 
 /**
@@ -14,7 +15,10 @@ public class Part18Composing {
 
     // TODO Create operator that returns name and surname of user (both upper case) but skips these with name White
     Function<Flux<User>, Flux<String>> nameUpperCase() {
-        return null;
+        return userFlux -> userFlux
+                .filter(u -> !"White".equals(u.getLastname()))
+                .map(user -> user.getFirstname() + " " + user.getLastname())
+                .map(String::toUpperCase);
     }
 
 //========================================================================================
@@ -23,6 +27,15 @@ public class Part18Composing {
     // Name should made upper case for each even subscriber
     // and lower case for each odd one
     Function<Flux<User>, Flux<String>> nameUpperOrLowerCase() {
-        return null;
+        final AtomicBoolean even = new AtomicBoolean(true);
+        return userFlux -> {
+            even.set(!even.get());
+            Flux<String> names = userFlux.map(user -> user.getFirstname() + " " + user.getLastname());
+            if (even.get()) {
+                return names.map(String::toLowerCase);
+            } else {
+                return names.map(String::toUpperCase);
+            }
+        };
     }
 }
