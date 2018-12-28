@@ -56,7 +56,4 @@ public class Part16GroupingTest {
                 .expectNext("gh")
                 .verifyComplete();
     }
-
-
-
 }

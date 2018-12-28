@@ -4,6 +4,9 @@ import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * Learn how to collect all elements of Flux int one (reduce)
+ */
 public class Part15Collecting {
 
 //========================================================================================
@@ -26,5 +29,4 @@ public class Part15Collecting {
     Mono<Boolean> doesNotIncludeSkyler(Flux<User> flux) {
         return null;
     }
-
 }
