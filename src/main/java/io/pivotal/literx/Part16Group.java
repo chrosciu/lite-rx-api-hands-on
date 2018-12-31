@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 /**
  * Learn how to group Flux elements
  */
-public class Part16Grouping {
+public class Part16Group {
 
 //========================================================================================
 

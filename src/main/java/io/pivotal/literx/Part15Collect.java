@@ -9,7 +9,7 @@ import static io.pivotal.literx.domain.User.SKYLER;
 /**
  * Learn how to collect all elements of Flux int one (reduce)
  */
-public class Part15Collecting {
+public class Part15Collect {
 
 //========================================================================================
 

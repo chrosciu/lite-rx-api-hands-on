@@ -8,9 +8,9 @@ import io.pivotal.literx.service.UserPointsServiceImpl;
 import org.junit.Test;
 import reactor.test.StepVerifier;
 
-public class Part17IntegratingTest {
+public class Part17IntegrateTest {
 
-    private Part17Integrating workshop = new Part17Integrating();
+    private Part17Integrate workshop = new Part17Integrate();
     private IterableRepository<User> iterableUserRepository = new IterableUserRepository();
     private UserPointsService userPointsService = new UserPointsServiceImpl();
 
