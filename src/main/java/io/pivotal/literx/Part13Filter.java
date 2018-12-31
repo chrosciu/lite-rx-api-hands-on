@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 /**
  * Learn how to filter Flux elements
  */
-public class Part13Filtering {
+public class Part13Filter {
 
 //========================================================================================
 

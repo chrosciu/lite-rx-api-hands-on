@@ -5,7 +5,7 @@ import io.pivotal.literx.repository.IterableRepository;
 import io.pivotal.literx.service.UserPointsService;
 import reactor.core.publisher.Mono;
 
-public class Part17Integrating {
+public class Part17Integrate {
 
 //========================================================================================
     // TODO Sum all points for all users (beware of traps !). Discard points which value is less than or equal to 5
