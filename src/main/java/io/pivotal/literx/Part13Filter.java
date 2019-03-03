@@ -24,7 +24,7 @@ public class Part13Filter {
 
 //========================================================================================
 
-    // TODO Remove users with duplicated name
+    // TODO Remove users with duplicated last name
     Flux<User> removeUsersWithDuplicatedNames(Flux<User> flux) {
         return flux.distinct(User::getLastname);
     }
