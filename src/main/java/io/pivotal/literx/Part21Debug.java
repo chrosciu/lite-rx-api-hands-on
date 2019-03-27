@@ -1,9 +1,13 @@
 package io.pivotal.literx;
 
 import io.pivotal.literx.domain.User;
+import io.pivotal.literx.repository.ReactiveRepository;
+import io.pivotal.literx.repository.ReactiveUserRepository;
 import reactor.core.publisher.Flux;
 
 public class Part21Debug {
+
+    ReactiveRepository<User> repository = new ReactiveUserRepository();
 
 //========================================================================================
 

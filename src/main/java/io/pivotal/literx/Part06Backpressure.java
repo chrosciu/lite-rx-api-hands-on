@@ -1,8 +1,6 @@
 package io.pivotal.literx;
 
 import io.pivotal.literx.domain.User;
-import io.pivotal.literx.repository.ReactiveRepository;
-import io.pivotal.literx.repository.ReactiveUserRepository;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
@@ -12,8 +10,6 @@ import reactor.test.StepVerifier;
  * @author Sebastien Deleuze
  */
 public class Part06Backpressure {
-
-	ReactiveRepository<User> repository = new ReactiveUserRepository();
 
 //========================================================================================
 
