@@ -55,4 +55,18 @@ public class Part05MergeTest {
 				.verifyComplete();
 	}
 
+//========================================================================================
+
+	@Test
+	public void zipFirstNameAndLastName() {
+		Flux<String> usernameFlux = Flux.just(User.SKYLER.getUsername(), User.JESSE.getUsername(), User.WALTER.getUsername(), User.SAUL.getUsername());
+		Flux<String> firstnameFlux = Flux.just(User.SKYLER.getFirstname(), User.JESSE.getFirstname(), User.WALTER.getFirstname(), User.SAUL.getFirstname());
+		Flux<String> lastnameFlux = Flux.just(User.SKYLER.getLastname(), User.JESSE.getLastname(), User.WALTER.getLastname(), User.SAUL.getLastname());
+		Flux<User> userFlux = workshop.userFluxFromStringFlux(usernameFlux, firstnameFlux, lastnameFlux);
+		StepVerifier.create(userFlux)
+				.expectNext(User.SKYLER, User.JESSE, User.WALTER, User.SAUL)
+				.verifyComplete();
+	}
+
+
 }

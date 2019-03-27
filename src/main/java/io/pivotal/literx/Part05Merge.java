@@ -32,4 +32,11 @@ public class Part05Merge {
 		return null;
 	}
 
+//========================================================================================
+
+	// TODO Create a Flux of user from Flux of username, firstname and lastname.
+	Flux<User> userFluxFromStringFlux(Flux<String> usernameFlux, Flux<String> firstnameFlux, Flux<String> lastnameFlux) {
+		return null;
+	}
+
 }

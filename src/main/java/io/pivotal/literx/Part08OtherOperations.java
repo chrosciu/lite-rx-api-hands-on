@@ -13,27 +13,6 @@ public class Part08OtherOperations {
 
 //========================================================================================
 
-	// TODO Create a Flux of user from Flux of username, firstname and lastname.
-	Flux<User> userFluxFromStringFlux(Flux<String> usernameFlux, Flux<String> firstnameFlux, Flux<String> lastnameFlux) {
-		return null;
-	}
-
-//========================================================================================
-
-	// TODO Return the mono which returns its value faster
-	Mono<User> useFastestMono(Mono<User> mono1, Mono<User> mono2) {
-		return null;
-	}
-
-//========================================================================================
-
-	// TODO Return the flux which returns the first value faster
-	Flux<User> useFastestFlux(Flux<User> flux1, Flux<User> flux2) {
-		return null;
-	}
-
-//========================================================================================
-
 	// TODO Convert the input Flux<User> to a Mono<Void> that represents the complete signal of the flux
 	Mono<Void> fluxCompletion(Flux<User> flux) {
 		return null;
@@ -50,13 +29,6 @@ public class Part08OtherOperations {
 
 	// TODO Return the same mono passed as input parameter, expect that it will emit User.SKYLER when empty
 	Mono<User> emptyToSkyler(Mono<User> mono) {
-		return null;
-	}
-
-//========================================================================================
-
-    // TODO Return flux which reports error if no user is signalled for two seconds
-	Flux<User> fluxWithTwoSecondsTimeout(Flux<User> flux) {
 		return null;
 	}
 

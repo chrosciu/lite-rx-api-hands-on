@@ -11,7 +11,7 @@ import reactor.test.StepVerifier;
  *
  * @author Sebastien Deleuze
  */
-public class Part06Request {
+public class Part06Backpressure {
 
 	ReactiveRepository<User> repository = new ReactiveUserRepository();
 
@@ -26,20 +26,6 @@ public class Part06Request {
 
 	// TODO Create a StepVerifier that initially requests 1 value and expects User.SKYLER then requests another value and expects User.JESSE.
 	StepVerifier requestOneExpectSkylerThenRequestOneExpectJesse(Flux<User> flux) {
-		return null;
-	}
-
-//========================================================================================
-
-	// TODO Return a Flux with all users stored in the repository that prints automatically logs for all Reactive Streams signals
-	Flux<User> fluxWithLog() {
-		return null;
-	}
-
-//========================================================================================
-
-	// TODO Return a Flux with all users stored in the repository that prints "Starring:" on subscribe, "firstname lastname" for all values and "The end!" on complete
-	Flux<User> fluxWithDoOnPrintln() {
 		return null;
 	}
 
