@@ -4,36 +4,12 @@ import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
-
 /**
  * Learn how to use various other operators.
  *
  * @author Sebastien Deleuze
  */
 public class Part08OtherOperations {
-
-//========================================================================================
-
-	// TODO Create a Flux of user from Flux of username, firstname and lastname.
-	Flux<User> userFluxFromStringFlux(Flux<String> usernameFlux, Flux<String> firstnameFlux, Flux<String> lastnameFlux) {
-		return Flux.zip(usernameFlux, firstnameFlux, lastnameFlux).map(tuple -> new User(tuple.getT1(), tuple.getT2(), tuple.getT3()));
-	}
-
-//========================================================================================
-
-	// TODO Return the mono which returns its value faster
-	Mono<User> useFastestMono(Mono<User> mono1, Mono<User> mono2) {
-		return Mono.first(mono1, mono2);
-	}
-
-//========================================================================================
-
-	// TODO Return the flux which returns the first value faster
-	Flux<User> useFastestFlux(Flux<User> flux1, Flux<User> flux2) {
-		return Flux.first(flux1, flux2);
-	}
 
 //========================================================================================
 
@@ -54,13 +30,6 @@ public class Part08OtherOperations {
 	// TODO Return the same mono passed as input parameter, expect that it will emit User.SKYLER when empty
 	Mono<User> emptyToSkyler(Mono<User> mono) {
 		return mono.defaultIfEmpty(User.SKYLER);
-	}
-
-//========================================================================================
-
-    // TODO Return flux which reports error if no user is signalled for two seconds
-	Flux<User> fluxWithTwoSecondsTimeout(Flux<User> flux) {
-		return flux.timeout(Duration.of(2, ChronoUnit.SECONDS));
 	}
 
 }

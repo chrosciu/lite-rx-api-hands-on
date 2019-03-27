@@ -32,4 +32,11 @@ public class Part05Merge {
 		return Flux.concat(mono1, mono2);
 	}
 
+//========================================================================================
+
+	// TODO Create a Flux of user from Flux of username, firstname and lastname.
+	Flux<User> userFluxFromStringFlux(Flux<String> usernameFlux, Flux<String> firstnameFlux, Flux<String> lastnameFlux) {
+		return Flux.zip(usernameFlux, firstnameFlux, lastnameFlux).map(tuple -> new User(tuple.getT1(), tuple.getT2(), tuple.getT3()));
+	}
+
 }
