@@ -31,7 +31,7 @@ public class Part14Subset {
 
 //========================================================================================
 
-    // TODO Take users until White comes
+    // TODO Take users until user with last name White comes
     Flux<User> takeUsersUntilWhite(Flux<User> flux) {
         return null;
     }
