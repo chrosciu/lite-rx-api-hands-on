@@ -4,7 +4,6 @@ import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * Learn how to group Flux elements
@@ -27,12 +26,11 @@ public class Part16Group {
 
 //========================================================================================
 
-    // TODO Split given string to separate lines, and return Flux emitting these lines.
-    // Newline character should not be emitted
-    Flux<String> splitIntoLines(String string) {
-        Stream<Character> characterStream = string.chars().mapToObj(x -> (char)x);
-        return Flux.fromStream(characterStream)
-                .bufferWhile(character -> !character.equals('\n'))
+    // TODO Split given stream of characters to separate lines, and return Flux emitting these lines.
+    // You can assume that '\n' character can be treated as newline character.
+    // These newline characters should not be emitted
+    Flux<String> splitIntoLines(Flux<Character> flux) {
+        return flux.bufferWhile(character -> !character.equals('\n'))
                 .map(characters -> characters.stream().reduce("", (s, c) -> s + c, (s1, s2) -> s1 + s2));
     }
 

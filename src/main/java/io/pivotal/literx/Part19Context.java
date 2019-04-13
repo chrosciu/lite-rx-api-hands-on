@@ -12,7 +12,7 @@ public class Part19Context {
 
 //========================================================================================
 
-    // TODO Return flux that logs each user forst name with prefix taken from given context key
+    // TODO Return flux that logs each user first name with prefix (followed by space) taken from given context key
     // If context does not contain such key, given default value should be used instead
     Flux<String> logUserFirstName(Flux<User> flux, String key, String defaultValue) {
         return flux.flatMap(user -> Mono.subscriberContext()

@@ -49,7 +49,8 @@ public class Part16GroupTest {
     @Test
     public void splitIntoLinesTest() {
         String lines = "abc\ndef\ngh";
-        Flux<String> resultFlux = workshop.splitIntoLines(lines);
+        Flux<Character> flux = Flux.fromStream(lines.chars().mapToObj(x -> (char)x));
+        Flux<String> resultFlux = workshop.splitIntoLines(flux);
         StepVerifier.create(resultFlux)
                 .expectNext("abc")
                 .expectNext("def")
