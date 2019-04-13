@@ -26,9 +26,10 @@ public class Part16Group {
 
 //========================================================================================
 
-    // TODO Split given string to separate lines, and return Flux emitting these lines.
-    // Newline character should not be emitted
-    Flux<String> splitIntoLines(String string) {
+    // TODO Split given stream of characters to separate lines, and return Flux emitting these lines.
+    // You can assume that '\n' character can be treated as newline character.
+    // These newline characters should not be emitted
+    Flux<String> splitIntoLines(Flux<Character> flux) {
         return null;
     }
 
