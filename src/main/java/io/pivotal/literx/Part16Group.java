@@ -31,7 +31,7 @@ public class Part16Group {
     // These newline characters should not be emitted
     Flux<String> splitIntoLines(Flux<Character> flux) {
         return flux.bufferWhile(character -> !character.equals('\n'))
-                .map(characters -> characters.stream().reduce("", (s, c) -> s + c, (s1, s2) -> s1 + s2));
+                .map(characters -> characters.stream().map(String::valueOf).reduce("", String::concat));
     }
 
 }
