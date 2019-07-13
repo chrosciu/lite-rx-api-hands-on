@@ -29,7 +29,7 @@ public class Part22AsyncTransform {
 
     // TODO Transform all items on source Flux using #asyncTransformFunc and return result Flux
     Flux<String> transform(Flux<String> items) {
-        return null;
+        return items.flatMap(this::asyncTransformFunc);
     }
 
 //========================================================================================
@@ -37,7 +37,7 @@ public class Part22AsyncTransform {
     // TODO Transform all items on source Flux using #asyncTransformFunc and return result Flux
     // Result flux should emit all transformed items for first source item, then all transformed items for second source item and so on
     Flux<String> transformWithOrder(Flux<String> items) {
-        return null;
+        return items.concatMap(this::asyncTransformFunc);
     }
 
 //========================================================================================
@@ -45,7 +45,7 @@ public class Part22AsyncTransform {
     // TODO Transform all items on source Flux using #asyncTransformFunc and return result Flux
     // Result flux should abandon emitting items for given source item if next source item is emitted
     Flux<String> transformUntilNext(Flux<String> items) {
-        return null;
+        return items.switchMap(this::asyncTransformFunc);
     }
 
 }
