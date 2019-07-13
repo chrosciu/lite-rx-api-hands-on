@@ -25,15 +25,4 @@ public class Part04Transform {
 		return null;
 	}
 
-//========================================================================================
-
-	// TODO Capitalize the users username, firstName and lastName using #asyncCapitalizeUser
-	Flux<User> asyncCapitalizeMany(Flux<User> flux) {
-		return null;
-	}
-
-	Mono<User> asyncCapitalizeUser(User u) {
-		return Mono.just(new User(u.getUsername().toUpperCase(), u.getFirstname().toUpperCase(), u.getLastname().toUpperCase()));
-	}
-
 }
