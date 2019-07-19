@@ -17,8 +17,10 @@
 package io.pivotal.literx;
 
 import java.time.Duration;
+import java.util.function.IntConsumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.IntStream;
 
 import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
@@ -66,7 +68,11 @@ public class Part03StepVerifier {
 	// TODO Expect 3600 elements at intervals of 1 second, and verify quicker than 3600s
 	// by manipulating virtual time thanks to StepVerifier#withVirtualTime, notice how long the test takes
 	void expect3600Elements(Supplier<Flux<Long>> supplier) {
-		StepVerifier.withVirtualTime(supplier).thenAwait(Duration.ofSeconds(3600)).expectNextCount(3600).verifyComplete();
+		StepVerifier.Step<Long> verifier = StepVerifier.withVirtualTime(supplier);
+		for (int i = 0; i < 3600; ++i) {
+			verifier = verifier.thenAwait(Duration.ofSeconds(1)).expectNextCount(1);
+		}
+		verifier.verifyComplete();
 	}
 
 	private void fail() {
