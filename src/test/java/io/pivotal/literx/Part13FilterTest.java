@@ -29,7 +29,7 @@ public class Part13FilterTest {
 
     @Test
     public void removeDuplicatedUsers() {
-        Flux<User> userFlux = Flux.just(SKYLER, SAUL, SKYLER, JESSE, WALTER);
+        Flux<User> userFlux = Flux.just(SKYLER, SAUL, SKYLER, SKYLER, JESSE, WALTER);
         Flux<User> resultFlux = workshop.removeDuplicatedUsers(userFlux);
         StepVerifier.create(resultFlux)
                 .expectNext(SKYLER, SAUL, JESSE, WALTER)
@@ -51,10 +51,10 @@ public class Part13FilterTest {
 
     @Test
     public void removeDuplicatedUsersInSequences() {
-        Flux<User> userFlux = Flux.just(SKYLER, SAUL, SAUL, JESSE, JESSE, WALTER);
+        Flux<User> userFlux = Flux.just(SKYLER, SAUL, SAUL, JESSE, JESSE, WALTER, SAUL, SAUL, JESSE);
         Flux<User> resultFlux = workshop.removeDuplicatedUsersInSequences(userFlux);
         StepVerifier.create(resultFlux)
-                .expectNext(SKYLER, SAUL, JESSE, WALTER)
+                .expectNext(SKYLER, SAUL, JESSE, WALTER, SAUL, JESSE)
                 .verifyComplete();
     }
 }
