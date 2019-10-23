@@ -29,7 +29,7 @@ public class Part16Group {
     //TODO Return flux with difference between current element and previous one (an increment)
     //E.g for sequence (1, 3, 8, 12) it should return (2, 5, 4)
     Flux<Integer> calculateIncrement(Flux<Integer> flux) {
-        return null;
+        return flux.buffer(2, 1).filter(l -> l.size() > 1).map(l -> l.get(1) - l.get(0));
     }
 
 //========================================================================================
