@@ -47,6 +47,17 @@ public class Part16GroupTest {
 //========================================================================================
 
     @Test
+    public void calculateIncrementTest() {
+        Flux<Integer> flux = Flux.just(1, 3, 8, 12);
+        Flux<Integer> resultFlux = workshop.calculateIncrement(flux);
+        StepVerifier.create(resultFlux)
+                .expectNext(2, 5, 4)
+                .verifyComplete();
+    }
+
+//========================================================================================
+
+    @Test
     public void splitIntoLinesTest() {
         String lines = "abc\ndef\ngh";
         Flux<Character> flux = Flux.fromStream(lines.chars().mapToObj(x -> (char)x));

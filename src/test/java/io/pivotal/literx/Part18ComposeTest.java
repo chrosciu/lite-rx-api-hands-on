@@ -30,7 +30,7 @@ public class Part18ComposeTest {
     @Test
     public void nameUpperOrLowerCaseTest() {
         Flux<User> userFlux = Flux.just(SKYLER, SAUL, JESSE, WALTER);
-        Flux<String> namesFlux = userFlux.compose(workshop.nameUpperOrLowerCase());
+        Flux<String> namesFlux = userFlux.transformDeferred(workshop.nameUpperOrLowerCase());
         StepVerifier.create(namesFlux)
                 .expectNext("SKYLER WHITE", "SAUL GOODMAN", "JESSE PINKMAN", "WALTER WHITE")
                 .verifyComplete();

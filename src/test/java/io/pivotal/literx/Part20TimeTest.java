@@ -65,9 +65,12 @@ public class Part20TimeTest {
 
     @Test
     public void fluxWithTwoSecondsTimeoutTest() {
-        Flux<User> userFlux = Flux.just(SKYLER, JESSE, WALTER).delayUntil(this::getUserDelayFlux);
-        Flux<User> resultFlux = workshop.fluxWithTwoSecondsTimeout(userFlux);
-        StepVerifier.create(resultFlux)
+        StepVerifier.withVirtualTime(() -> {
+            Flux<User> userFlux = Flux.just(SKYLER, JESSE, WALTER).delayUntil(this::getUserDelayFlux);
+            Flux<User> resultFlux = workshop.fluxWithTwoSecondsTimeout(userFlux);
+            return resultFlux;
+        })
+                .thenAwait(Duration.ofSeconds(4))
                 .expectNext(SKYLER, JESSE)
                 .verifyError(TimeoutException.class);
     }
