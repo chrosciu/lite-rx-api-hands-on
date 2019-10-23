@@ -26,6 +26,14 @@ public class Part16Group {
 
 //========================================================================================
 
+    //TODO Return flux with difference between current element and previous one (an increment)
+    //E.g for sequence (1, 3, 8, 12) it should return (2, 5, 4)
+    Flux<Integer> calculateIncrement(Flux<Integer> flux) {
+        return null;
+    }
+
+//========================================================================================
+
     // TODO Split given stream of characters to separate lines, and return Flux emitting these lines.
     // You can assume that '\n' character can be treated as newline character.
     // These newline characters should not be emitted
