@@ -20,9 +20,23 @@ public class Part06Backpressure {
 
 //========================================================================================
 
-	// TODO Create a StepVerifier that initially requests 1 value and expects User.SKYLER then requests another value and expects User.JESSE.
+	// TODO Create a StepVerifier that initially requests 1 value and expects User.SKYLER then requests another value and expects User.JESSE then stops verifying by cancelling the source
 	StepVerifier requestOneExpectSkylerThenRequestOneExpectJesse(Flux<User> flux) {
 		return StepVerifier.create(flux, 1).expectNextMatches(User.SKYLER::equals).thenRequest(1).expectNextMatches(User.JESSE::equals).thenCancel();
+	}
+
+//========================================================================================
+
+	// TODO Return a Flux with all users stored in the repository that prints automatically logs for all Reactive Streams signals
+	Flux<User> fluxWithLog() {
+		return null;
+	}
+
+//========================================================================================
+
+	// TODO Return a Flux with all users stored in the repository that prints "Starring:" on subscribe, "firstname lastname" for all values and "The end!" on complete
+	Flux<User> fluxWithDoOnPrintln() {
+		return null;
 	}
 
 }
