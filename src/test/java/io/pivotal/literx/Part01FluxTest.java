@@ -1,6 +1,6 @@
 package io.pivotal.literx;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
@@ -8,7 +8,7 @@ import reactor.test.StepVerifier;
  * Learn how to create Flux instances.
  *
  * @author Sebastien Deleuze
- * @see <a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html">Flux Javadoc</a>
+ * @see <a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html">Flux Javadoc</a>
  */
 public class Part01FluxTest {
 
