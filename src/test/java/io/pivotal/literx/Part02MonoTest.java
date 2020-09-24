@@ -2,7 +2,7 @@ package io.pivotal.literx;
 
 import java.time.Duration;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
@@ -10,7 +10,7 @@ import reactor.test.StepVerifier;
  * Learn how to create Mono instances.
  *
  * @author Sebastien Deleuze
- * @see <a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html">Mono Javadoc</a>
+ * @see <a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html">Mono Javadoc</a>
  */
 public class Part02MonoTest {
 
@@ -33,8 +33,7 @@ public class Part02MonoTest {
 		StepVerifier
 				.create(mono)
 				.expectSubscription()
-				.expectNoEvent(Duration.ofSeconds(1))
-				.thenCancel()
+				.expectTimeout(Duration.ofSeconds(1))
 				.verify();
 	}
 
