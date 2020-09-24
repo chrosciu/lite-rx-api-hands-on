@@ -3,18 +3,14 @@ package io.pivotal.literx;
 import io.pivotal.literx.domain.User;
 import io.pivotal.literx.repository.ReactiveRepository;
 import io.pivotal.literx.repository.ReactiveUserRepository;
-import org.junit.Test;
-import reactor.core.publisher.Flux;
+import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 import reactor.test.publisher.PublisherProbe;
 
-import java.time.Duration;
-import java.util.concurrent.TimeoutException;
+import java.util.Arrays;
+import java.util.List;
 
-import static io.pivotal.literx.domain.User.JESSE;
-import static io.pivotal.literx.domain.User.SKYLER;
-import static io.pivotal.literx.domain.User.WALTER;
 
 /**
  * Learn how to use various other operators.
@@ -61,6 +57,17 @@ public class Part08OtherOperationsTest {
 		mono = workshop.emptyToSkyler(Mono.empty());
 		StepVerifier.create(mono)
 				.expectNext(User.SKYLER)
+				.verifyComplete();
+	}
+
+//========================================================================================
+
+	@Test
+	public void collect() {
+		ReactiveRepository<User> repository = new ReactiveUserRepository();
+		Mono<List<User>> collection = workshop.fluxCollection(repository.findAll());
+		StepVerifier.create(collection)
+				.expectNext(Arrays.asList(User.SKYLER, User.JESSE, User.WALTER, User.SAUL))
 				.verifyComplete();
 	}
 

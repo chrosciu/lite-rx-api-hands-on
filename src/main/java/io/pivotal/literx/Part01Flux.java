@@ -9,7 +9,7 @@ import java.util.Arrays;
  * Learn how to create Flux instances.
  *
  * @author Sebastien Deleuze
- * @see <a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html">Flux Javadoc</a>
+ * @see <a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html">Flux Javadoc</a>
  */
 public class Part01Flux {
 
