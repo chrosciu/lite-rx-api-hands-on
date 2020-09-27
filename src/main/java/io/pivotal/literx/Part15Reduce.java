@@ -5,9 +5,9 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * Learn how to collect all elements of Flux int one (reduce)
+ * Learn how to reduce all elements of Flux int one Mono
  */
-public class Part15Collect {
+public class Part15Reduce {
 
 //========================================================================================
 
