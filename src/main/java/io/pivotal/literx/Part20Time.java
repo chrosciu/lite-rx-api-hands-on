@@ -3,6 +3,9 @@ package io.pivotal.literx;
 import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.util.function.Tuple2;
+
+import java.util.List;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -29,5 +32,24 @@ public class Part20Time {
     Flux<User> fluxWithTwoSecondsTimeout(Flux<User> flux) {
         return flux.timeout(Duration.of(2, ChronoUnit.SECONDS));
     }
+
+//========================================================================================
+
+    //TODO Create a Flux<String> with items spread over time
+    //Items are described by list passed as an argument
+    //Each item on list represents one item of result Flux
+    //First field of tuple stores item value
+    //Second one - delay of this item in milliseconds
+    Flux<String> createFluxFromItemsWithDelaysInMs(List<Tuple2<String, Integer>> itemsWithDelays) {
+        return null;
+    }
+
+//========================================================================================
+
+    //TODO Combine latest elements of given two fluxes, result element should be a concatenation of two inputs
+    Flux<String> combineLatestWithConcat(Flux<String> flux1, Flux<String> flux2) {
+        return null;
+    }
+
 
 }
