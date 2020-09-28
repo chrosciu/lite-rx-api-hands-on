@@ -1,6 +1,7 @@
 package io.pivotal.literx;
 
 import io.pivotal.literx.domain.User;
+import io.pivotal.literx.event.ErrorUserEventSource;
 import io.pivotal.literx.event.EventSource;
 import io.pivotal.literx.event.UserEventSource;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,7 @@ public class Part12ProgrammaticFluxTest {
 
     Part12ProgrammaticFlux workshop = new Part12ProgrammaticFlux();
     EventSource<User> eventSource = new UserEventSource();
+    EventSource<User> eventSourceWithError = new ErrorUserEventSource();
 
 //========================================================================================
 
@@ -42,12 +44,17 @@ public class Part12ProgrammaticFluxTest {
     @Test
     public void usersFromEventSource() {
         Flux<User> flux = workshop.userFluxFromEventSource(eventSource);
-
         List<User> expectedSequence = Arrays.asList(WALTER, SAUL, SKYLER, JESSE);
 
         StepVerifier.create(flux)
                 .expectNextSequence(expectedSequence)
                 .verifyComplete();
+
+        Flux<User> fluxWithError = workshop.userFluxFromEventSource(eventSourceWithError);
+
+        StepVerifier.create(fluxWithError)
+                .expectError(RuntimeException.class)
+                .verify();
     }
 
 

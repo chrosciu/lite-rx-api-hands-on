@@ -27,7 +27,7 @@ public class Part18Compose {
     // TODO Create operator that returns name and last name of user (joined with space)
     // Name should made upper case for each even subscriber
     // and lower case for each odd one
-    // Hint: this operator will be called for each subscriber as Flux#compose is being used here
+    // Hint: this operator will be called for each subscriber as Flux#transformDeferred is being used here
     Function<Flux<User>, Flux<String>> nameUpperOrLowerCase() {
         final AtomicBoolean even = new AtomicBoolean(true);
         return userFlux -> {
