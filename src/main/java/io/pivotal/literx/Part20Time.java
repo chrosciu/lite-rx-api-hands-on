@@ -40,12 +40,8 @@ public class Part20Time {
     //First field of tuple stores item value
     //Second one - delay of this item in milliseconds
     Flux<String> createFluxFromItemsWithDelaysInMs(List<Tuple2<String, Integer>> itemsWithDelays) {
-        Flux<String> flux = Flux.empty();
-        for (Tuple2<String, Integer> itemWithDelay: itemsWithDelays) {
-            Flux<String> f = Flux.just(itemWithDelay.getT1()).delaySequence(Duration.ofMillis(itemWithDelay.getT2()));
-            flux = flux.mergeWith(f);
-        }
-        return flux;
+        return Flux.fromIterable(itemsWithDelays)
+                .flatMap(t -> Mono.just(t.getT1()).delayElement(Duration.ofMillis(t.getT2())));
     }
 
 //========================================================================================
