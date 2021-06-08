@@ -28,9 +28,9 @@ public class Part12ProgrammaticFluxTest {
 
     @Test
     public void starsWithGenerate() {
-        Flux<String> flux = workshop.starsFluxWithGenerate(1, 20);
+        Flux<String> flux = workshop.starsFluxWithGenerate(2, 20);
 
-        List<String> expectedSequence = IntStream.rangeClosed(1, 20)
+        List<String> expectedSequence = IntStream.rangeClosed(2, 20)
                 .mapToObj(workshop::nStars)
                 .collect(Collectors.toList());
 

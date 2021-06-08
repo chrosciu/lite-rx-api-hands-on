@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
+import java.time.Duration;
+
 /**
  * Learn how to create Flux instances.
  *
@@ -57,10 +59,13 @@ public class Part01FluxTest {
 
 	@Test
 	public void countEach100ms() {
-		Flux<Long> flux = workshop.counter();
-		StepVerifier.create(flux)
-				.expectNext(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L)
-				.verifyComplete();
+		StepVerifier.Step<Long> sv = StepVerifier.withVirtualTime(() -> workshop.counter())
+				.expectSubscription();
+		for (long i = 0; i < 10; i ++)  {
+			sv = sv.expectNoEvent(Duration.ofMillis(100))
+					.expectNext(i);
+		}
+		sv.verifyComplete();
 	}
 
 }
