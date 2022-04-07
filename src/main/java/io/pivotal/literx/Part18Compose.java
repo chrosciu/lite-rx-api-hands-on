@@ -12,7 +12,7 @@ public class Part18Compose {
 
 //========================================================================================
 
-    // TODO Create operator that returns name and last name (joined with space) of user
+    // TODO Create operator that returns first name and last name (joined with space) of user
     // (both upper case) but skips these with last name White
     Function<Flux<User>, Flux<String>> nameUpperCase() {
         return null;
@@ -20,7 +20,7 @@ public class Part18Compose {
 
 //========================================================================================
 
-    // TODO Create operator that returns name and last name of user (joined with space)
+    // TODO Create operator that returns first name and last name of user (joined with space)
     // Name should made upper case for each even subscriber
     // and lower case for each odd one
     // Hint: this operator will be called for each subscriber as Flux#transformDeferred is being used here
