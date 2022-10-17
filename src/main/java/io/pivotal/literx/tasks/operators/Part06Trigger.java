@@ -9,21 +9,21 @@ public class Part06Trigger {
 
     //TODO Return Flux which is triggered when given stream completes
     <T> Flux<T> triggerNewStreamWhenStreamCompletes(Flux<?> stream, Flux<T> newStream) {
-        return null;
+        return stream.thenMany(newStream);
     }
 
     //========================================================================================
 
     //TODO Return Mono<Void> which completes when given stream completes
     Mono<Void> triggerCompleteWhenStreamCompletes(Flux<?> stream) {
-        return null;
+        return stream.then();
     }
 
     //========================================================================================
 
     //TODO Return Mono<Void> which completes when all given streams complete
     Mono<Void> triggerCompleteWhenAllStreamsComplete(Flux<?>... streams) {
-        return null;
+        return Mono.when(streams);
     }
 
 }
