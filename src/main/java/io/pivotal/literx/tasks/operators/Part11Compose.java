@@ -1,0 +1,30 @@
+package io.pivotal.literx.tasks.operators;
+
+import io.pivotal.literx.domain.User;
+import reactor.core.publisher.Flux;
+
+import java.util.function.Function;
+
+/**
+ * Learn how to compose Reactor operators into new ones
+ */
+public class Part11Compose {
+
+//========================================================================================
+
+    // TODO Create operator that returns first name and last name (joined with space) of user
+    // (both upper case) but skips these with last name White
+    Function<Flux<User>, Flux<String>> nameUpperCase() {
+        return null;
+    }
+
+//========================================================================================
+
+    // TODO Create operator that returns first name and last name of user (joined with space)
+    // Name should made upper case for each even subscriber
+    // and lower case for each odd one
+    // Hint: this operator will be called for each subscriber as Flux#transformDeferred is being used here
+    Function<Flux<User>, Flux<String>> nameUpperOrLowerCase() {
+        return null;
+    }
+}
