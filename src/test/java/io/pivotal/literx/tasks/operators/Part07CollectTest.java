@@ -10,9 +10,9 @@ import reactor.test.StepVerifier;
 import java.util.Arrays;
 import java.util.List;
 
-public class Part06CollectTest {
+public class Part07CollectTest {
 
-    private Part06Collect workshop = new Part06Collect();
+    private Part07Collect workshop = new Part07Collect();
 
 //========================================================================================
 
