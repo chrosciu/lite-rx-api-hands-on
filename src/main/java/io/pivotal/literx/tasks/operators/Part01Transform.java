@@ -1,0 +1,28 @@
+package io.pivotal.literx.tasks.operators;
+
+import io.pivotal.literx.domain.User;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+/**
+ * Learn how to transform values.
+ *
+ * @author Sebastien Deleuze
+ */
+public class Part01Transform {
+
+//========================================================================================
+
+	// TODO Capitalize (with String#toUpperCase) the user username, firstname and lastname
+	Mono<User> capitalizeOne(Mono<User> mono) {
+		return mono.map(u -> new User(u.getUsername().toUpperCase(), u.getFirstname().toUpperCase(), u.getLastname().toUpperCase()));
+	}
+
+//========================================================================================
+
+	// TODO Capitalize (with String#toUpperCase) the users username, firstName and lastName
+	Flux<User> capitalizeMany(Flux<User> flux) {
+		return flux.map(u -> new User(u.getUsername().toUpperCase(), u.getFirstname().toUpperCase(), u.getLastname().toUpperCase()));
+	}
+
+}
