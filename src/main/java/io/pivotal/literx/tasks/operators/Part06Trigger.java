@@ -31,7 +31,7 @@ public class Part06Trigger {
 
     //TODO Return alternate Flux containing SKYLER and JESSE users if given stream is empty
     Flux<User> returnFluxWithSkylerAndJesseWhenStreamIsEmpty(Flux<User> flux) {
-        return null;
+        return flux.switchIfEmpty(Flux.just(User.SKYLER, User.JESSE));
     }
 
 }
