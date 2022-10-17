@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
  *
  * @author Sebastien Deleuze
  */
-public class Part08Merge {
+public class Part09Merge {
 
 //========================================================================================
 

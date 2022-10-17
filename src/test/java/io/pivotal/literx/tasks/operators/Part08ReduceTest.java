@@ -10,9 +10,9 @@ import static io.pivotal.literx.domain.User.JESSE;
 import static io.pivotal.literx.domain.User.SKYLER;
 import static io.pivotal.literx.domain.User.WALTER;
 
-public class Part07ReduceTest {
+public class Part08ReduceTest {
 
-    private Part07Reduce workshop = new Part07Reduce();
+    private Part08Reduce workshop = new Part08Reduce();
 
 //========================================================================================
 

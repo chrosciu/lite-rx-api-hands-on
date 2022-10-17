@@ -13,9 +13,9 @@ import static io.pivotal.literx.domain.User.SAUL;
 import static io.pivotal.literx.domain.User.SKYLER;
 import static io.pivotal.literx.domain.User.WALTER;
 
-public class Part09GroupTest {
+public class Part10GroupTest {
 
-    private Part09Group workshop = new Part09Group();
+    private Part10Group workshop = new Part10Group();
 
 //========================================================================================
 

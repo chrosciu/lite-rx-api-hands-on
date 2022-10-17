@@ -19,9 +19,9 @@ import static io.pivotal.literx.domain.User.JESSE;
 import static io.pivotal.literx.domain.User.SKYLER;
 import static io.pivotal.literx.domain.User.WALTER;
 
-public class Part10TimeTest {
+public class Part11TimeTest {
 
-    Part10Time workshop = new Part10Time();
+    Part11Time workshop = new Part11Time();
 
     final static User MARIE = new User("mschrader", "Marie", "Schrader");
     final static User MIKE = new User("mehrmantraut", "Mike", "Ehrmantraut");

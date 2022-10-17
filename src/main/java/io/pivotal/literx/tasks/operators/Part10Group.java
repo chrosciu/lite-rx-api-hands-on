@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Learn how to group Flux elements
  */
-public class Part09Group {
+public class Part10Group {
 
 //========================================================================================
 
