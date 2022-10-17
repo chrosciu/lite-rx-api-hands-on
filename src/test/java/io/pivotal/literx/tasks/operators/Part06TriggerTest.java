@@ -4,6 +4,7 @@ import io.pivotal.literx.domain.User;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
+import reactor.test.StepVerifierOptions;
 import reactor.test.publisher.TestPublisher;
 
 public class Part06TriggerTest {
@@ -58,6 +59,22 @@ public class Part06TriggerTest {
                 .then(testPublisher2::complete)
                 .expectNextCount(0)
                 .then(testPublisher1::complete)
+                .verifyComplete();
+    }
+
+    //========================================================================================
+
+    @Test
+    public void returnFluxWithSkylerAndJesseWhenStreamIsEmptyTest() {
+        StepVerifier.create(
+                workshop.returnFluxWithSkylerAndJesseWhenStreamIsEmpty(Flux.just(User.SAUL, User.WALTER)),
+                        StepVerifierOptions.create().scenarioName("Not empty stream"))
+                .expectNext(User.SAUL, User.WALTER)
+                .verifyComplete();
+
+        StepVerifier.create(workshop.returnFluxWithSkylerAndJesseWhenStreamIsEmpty(Flux.empty()),
+                        StepVerifierOptions.create().scenarioName("Empty stream"))
+                .expectNext(User.SKYLER, User.JESSE)
                 .verifyComplete();
     }
 
