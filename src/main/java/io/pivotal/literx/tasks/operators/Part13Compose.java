@@ -9,7 +9,7 @@ import java.util.function.Function;
 /**
  * Learn how to compose Reactor operators into new ones
  */
-public class Part12Compose {
+public class Part13Compose {
 
 //========================================================================================
 

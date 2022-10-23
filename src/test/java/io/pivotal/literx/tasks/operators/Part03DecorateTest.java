@@ -14,6 +14,8 @@ public class Part03DecorateTest {
 
     private Part03Decorate workshop = new Part03Decorate();
 
+    //========================================================================================
+
     @Test
     public void decorateWithIndexOneBasedTest() {
         Flux<String> flux = Flux.just(JESSE, SKYLER, WALTER, SAUL).map(User::getFirstname);

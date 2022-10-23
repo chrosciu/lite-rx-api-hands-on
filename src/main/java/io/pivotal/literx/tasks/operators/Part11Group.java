@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * Learn how to group Flux elements
  */
-public class Part10Group {
+public class Part11Group {
 
 //========================================================================================
 

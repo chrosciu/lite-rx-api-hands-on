@@ -13,9 +13,9 @@ import reactor.test.StepVerifier;
  *
  * @author Sebastien Deleuze
  */
-public class Part09MergeTest {
+public class Part10MergeTest {
 
-	Part09Merge workshop = new Part09Merge();
+	Part10Merge workshop = new Part10Merge();
 
 	final static User MARIE = new User("mschrader", "Marie", "Schrader");
 	final static User MIKE = new User("mehrmantraut", "Mike", "Ehrmantraut");

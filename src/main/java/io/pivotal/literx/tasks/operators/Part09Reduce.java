@@ -9,7 +9,7 @@ import static io.pivotal.literx.domain.User.SKYLER;
 /**
  * Learn how to reduce all elements of Flux int one Mono
  */
-public class Part08Reduce {
+public class Part09Reduce {
 
 //========================================================================================
 
