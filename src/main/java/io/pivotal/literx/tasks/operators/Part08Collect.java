@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
-public class Part07Collect {
+public class Part08Collect {
 
 //========================================================================================
 

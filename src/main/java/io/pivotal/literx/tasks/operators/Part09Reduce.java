@@ -7,7 +7,7 @@ import reactor.core.publisher.Mono;
 /**
  * Learn how to reduce all elements of Flux int one Mono
  */
-public class Part08Reduce {
+public class Part09Reduce {
 
 //========================================================================================
 

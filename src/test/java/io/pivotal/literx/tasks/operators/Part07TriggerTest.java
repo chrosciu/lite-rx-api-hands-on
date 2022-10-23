@@ -7,9 +7,9 @@ import reactor.test.StepVerifier;
 import reactor.test.StepVerifierOptions;
 import reactor.test.publisher.TestPublisher;
 
-public class Part06TriggerTest {
+public class Part07TriggerTest {
 
-    private Part06Trigger workshop = new Part06Trigger();
+    private Part07Trigger workshop = new Part07Trigger();
 
     //========================================================================================
 

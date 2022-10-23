@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 /**
  * Learn how to create a subset of Flux elements
  */
-public class Part05Subset {
+public class Part06Subset {
 
 //========================================================================================
 

@@ -10,9 +10,9 @@ import static io.pivotal.literx.domain.User.SAUL;
 import static io.pivotal.literx.domain.User.SKYLER;
 import static io.pivotal.literx.domain.User.WALTER;
 
-public class Part12ComposeTest {
+public class Part13ComposeTest {
 
-    private Part12Compose workshop = new Part12Compose();
+    private Part13Compose workshop = new Part13Compose();
 
 //========================================================================================
 
