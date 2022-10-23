@@ -11,10 +11,25 @@ public class Part04Subscription {
     // TODO Write a subscriber that requests 2 items
     // and cancels subscription when it receives all of them
     Subscriber<String> createTwoItemsSubscriber() {
-        return null;
+        return new TwoItemsSubscriber();
     }
 
+    private class TwoItemsSubscriber extends BaseSubscriber<String> {
+        private int counter = 0;
 
+        @Override
+        protected void hookOnSubscribe(Subscription subscription) {
+            request(2);
+        }
+
+        @Override
+        protected void hookOnNext(String value) {
+            ++counter;
+            if (2 == counter) {
+                cancel();
+            }
+        }
+    }
 
 
 //========================================================================================
