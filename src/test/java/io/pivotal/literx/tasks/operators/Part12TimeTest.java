@@ -91,6 +91,17 @@ public class Part12TimeTest {
 
 //========================================================================================
 
+    @Test
+    public void fluxWithDelayMsTest() {
+        StepVerifier.withVirtualTime(() -> workshop.fluxWithDelayMs(SKYLER, 500))
+                .expectSubscription()
+                .expectNoEvent(Duration.ofMillis(500))
+                .expectNext(SKYLER)
+                .verifyComplete();
+    }
+
+//========================================================================================
+
     private List<Tuple2<String, Integer>> flux1Items = Arrays.asList(
             Tuples.of("A", 2000),
             Tuples.of("B", 3000),

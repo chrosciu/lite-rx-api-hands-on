@@ -32,6 +32,14 @@ public class Part12Time {
 
 //========================================================================================
 
+    // TODO Return flux which contains single user emitted after delay in ms
+    Flux<User> fluxWithDelayMs(User user, Integer delayMs) {
+        return null;
+    }
+
+
+//========================================================================================
+
     //TODO Create a Flux<String> with items spread over time
     //Items are described by list passed as an argument
     //Each item on list represents one item of result Flux
