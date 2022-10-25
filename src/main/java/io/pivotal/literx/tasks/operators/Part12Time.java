@@ -36,7 +36,7 @@ public class Part12Time {
 
     // TODO Return flux which contains single user emitted after delay in ms
     Flux<User> fluxWithDelayMs(User user, Integer delayMs) {
-        return null;
+        return Flux.just(user).delayElements(Duration.ofMillis(delayMs));
     }
 
 
