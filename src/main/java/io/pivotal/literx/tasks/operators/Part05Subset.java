@@ -9,7 +9,7 @@ import static io.pivotal.literx.domain.User.SKYLER;
 /**
  * Learn how to create a subset of Flux elements
  */
-public class Part06Subset {
+public class Part05Subset {
 
 //========================================================================================
 

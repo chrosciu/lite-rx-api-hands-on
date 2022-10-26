@@ -10,9 +10,9 @@ import static io.pivotal.literx.domain.User.SAUL;
 import static io.pivotal.literx.domain.User.SKYLER;
 import static io.pivotal.literx.domain.User.WALTER;
 
-public class Part05FluxToMonoTest {
+public class Part06FluxToMonoTest {
 
-    private Part05FluxToMono workshop = new Part05FluxToMono();
+    private Part06FluxToMono workshop = new Part06FluxToMono();
 
     //========================================================================================
 

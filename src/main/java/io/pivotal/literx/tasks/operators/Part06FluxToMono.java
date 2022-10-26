@@ -4,7 +4,7 @@ import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class Part05FluxToMono {
+public class Part06FluxToMono {
 
     //========================================================================================
 

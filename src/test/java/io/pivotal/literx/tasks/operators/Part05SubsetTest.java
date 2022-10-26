@@ -10,9 +10,9 @@ import static io.pivotal.literx.domain.User.SAUL;
 import static io.pivotal.literx.domain.User.SKYLER;
 import static io.pivotal.literx.domain.User.WALTER;
 
-public class Part06SubsetTest {
+public class Part05SubsetTest {
 
-    private Part06Subset workshop = new Part06Subset();
+    private Part05Subset workshop = new Part05Subset();
 
 //========================================================================================
 
