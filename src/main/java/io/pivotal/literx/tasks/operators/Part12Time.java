@@ -15,14 +15,14 @@ public class Part12Time {
 
     // TODO Return the mono which returns its value faster
     Mono<User> useFastestMono(Mono<User> mono1, Mono<User> mono2) {
-        return Mono.first(mono1, mono2);
+        return Mono.firstWithSignal(mono1, mono2);
     }
 
 //========================================================================================
 
     // TODO Return the flux which returns the first value faster
     Flux<User> useFastestFlux(Flux<User> flux1, Flux<User> flux2) {
-        return Flux.first(flux1, flux2);
+        return Flux.firstWithSignal(flux1, flux2);
     }
 
 //========================================================================================
