@@ -21,7 +21,7 @@ public class Part02Debug {
     // TODO Return a Flux with all users stored in the repository that prints "Starring:" at first, "firstname lastname" for all values and "The end!" on complete
     Flux<User> fluxWithDoOnPrintln() {
         return repository.findAll()
-                .doOnSubscribe(s -> System.out.println("Starring: "))
+                .doFirst(() -> System.out.println("Starring: "))
                 .doOnNext(u -> System.out.println(u.getFirstname() + " " + u.getLastname()))
                 .doOnComplete(() -> System.out.println("The end!"));
     }
